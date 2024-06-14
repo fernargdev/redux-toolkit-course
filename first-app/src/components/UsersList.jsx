@@ -11,7 +11,7 @@ export const UsersList = () => {
     axios
       .get('https://jsonplaceholder.typicode.com/users')
       .then((res) => {
-        console.log(res)
+        // console.log(res)
         dispatch(fetchUser(res.data))
       })
       .catch((err) => console.log(err))
@@ -20,7 +20,6 @@ export const UsersList = () => {
   return (
     <>
       <h2>Lista de Usuarios</h2>
-      {console.log('users', users)}
       <ul>
         {users.map((user) => (
           <li key={user.id}>{user.name}</li>

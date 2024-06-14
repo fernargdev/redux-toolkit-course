@@ -5,7 +5,6 @@ import ProductsList from './components/ProductsList'
 function App() {
   return (
     <>
-      <h1>Vite + React + Redux Toolkit</h1>
       {/* <UsersList /> */}
       <ProductsList />
     </>

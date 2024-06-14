@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useSelector, useDispatch } from 'react-redux'
 import {
   createProduct,
+  deleteProduct,
   readProduct,
   updateProduct,
 } from '../redux/productsSlice'
@@ -64,10 +65,19 @@ const ProductsList = () => {
     }
   }
 
+  const handleDeleteProduct = (id) => {
+    dispatch(deleteProduct(id))
+
+    console.log(id)
+
+    axios
+      .delete(`http://localhost:3001/products/${id}`)
+      .catch((err) => console.log(err))
+  }
+
   return (
     <>
-      <h2>Crud de Productos</h2>
-      <h3>Lista de Productos</h3>
+      <h2>Lista de Productos</h2>
       <ul>
         {products.data.map((product) => (
           <li key={product.id}>
@@ -91,7 +101,9 @@ const ProductsList = () => {
                 <button onClick={() => setEditedProduct(product)}>
                   Editar
                 </button>
-                <button>Eliminar</button>
+                <button onClick={() => handleDeleteProduct(product.id)}>
+                  Eliminar
+                </button>
               </div>
             )}
           </li>

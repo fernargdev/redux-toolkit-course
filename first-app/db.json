@@ -2,15 +2,19 @@
   "products": [
     {
       "name": "Product 1",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "Product 2",
-      "id": 2
+      "id": "2"
     },
     {
       "name": "Product 3",
-      "id": 3
+      "id": "3"
+    },
+    {
+      "id": 1718337046323,
+      "name": "Product 4"
     }
   ]
 }
